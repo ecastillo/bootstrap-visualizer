@@ -102,7 +102,7 @@ files.forEach((file) => {
     //var result = data;
     //console.log(data);
 
-    sass.writeFile("../scss/" + file, data, function () {
+    sass.writeFile("scss/" + file, data, function () {
       console.log('wrote "scss/' + file + '"');
     });
   });
@@ -124,7 +124,7 @@ function compile(options = {}) {
           $headings-color: ${options2.headingsColor};`;
 
   var promise = new Promise(function (resolve, reject) {
-    sass.compile(string + '@import "../scss/bootstrap";' + appScss, function (
+    sass.compile(string + '@import "scss/bootstrap";' + appScss, function (
       result
     ) {
       console.log("compiled", result);
