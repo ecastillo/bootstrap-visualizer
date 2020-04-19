@@ -217,7 +217,7 @@ $("form").submit(function (e) {
 });
 
 function init() {
-  $.get("/style.scss", function (data) {
+  $.get("/bootstrap-visualizer/style.scss", function (data) {
     console.log("Load was performed.");
     appScss = data;
     // compile().then(function (css) {
