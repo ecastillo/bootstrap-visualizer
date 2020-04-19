@@ -102,7 +102,7 @@ files.forEach((file) => {
     //var result = data;
     //console.log(data);
 
-    sass.writeFile("scss/" + file, data, function () {
+    sass.writeFile("/bootstrap-visualizer/scss/" + file, data, function () {
       console.log('wrote "scss/' + file + '"');
     });
   });
