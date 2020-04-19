@@ -1,0 +1,54 @@
+//@import "scss/bootstrap";
+// @import "scss/functions";
+// @import "scss/variables";
+
+$grid-gutter-width: 30px !default;
+$theme-colors: map-merge($theme-colors, ("warning": #ffc107)) !default;
+$primary: #007bff !default;
+
+
+.row-holder {
+    overflow: hidden;
+}
+
+.row {
+  background: $success;
+  color: white;
+  margin-bottom: 1rem;
+
+  .col {
+      &:before {
+        $fontSize: 0.6rem;
+        content: "#{$grid-gutter-width}";
+        position: absolute;
+        right: calc(100% - #{$fontSize});
+        transform: translateY(-50%) rotate(-90deg);
+        top: 50%;
+        font-size: $fontSize;
+      }
+  }
+
+  @for $i from 1 through 10 {
+    .col:nth-child(n + #{$i}) {
+      //background-color: lighten($primary, $i * 5%);
+      //background-color: theme-color-level(primary, -$i);
+      & > div {
+        background-color: theme-color-level(warning, -$i);
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        & > div {
+            
+        }
+      }
+    }
+  }
+}
+
+svg {
+  path {
+    fill: $primary;
+  }
+}
