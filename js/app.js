@@ -98,7 +98,7 @@ var files = [
 var tasks = [];
 
 files.forEach((file) => {
-  $.get("../scss/" + file, function (data) {
+  $.get("/bootstrap-visualizer/scss/" + file, function (data) {
     //var result = data;
     //console.log(data);
 
