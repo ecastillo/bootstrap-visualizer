@@ -98,11 +98,11 @@ var files = [
 var tasks = [];
 
 files.forEach((file) => {
-  $.get("/bootstrap-visualizer/scss/" + file, function (data) {
+  $.get("../scss/" + file, function (data) {
     //var result = data;
     //console.log(data);
 
-    sass.writeFile("/bootstrap-visualizer/scss/" + file, data, function () {
+    sass.writeFile("../scss/" + file, data, function () {
       console.log('wrote "scss/' + file + '"');
     });
   });
@@ -124,7 +124,7 @@ function compile(options = {}) {
           $headings-color: ${options2.headingsColor};`;
 
   var promise = new Promise(function (resolve, reject) {
-    sass.compile(string + '@import "/bootstrap-visualizer/scss/bootstrap";' + appScss, function (
+    sass.compile(string + '@import "../scss/bootstrap";' + appScss, function (
       result
     ) {
       console.log("compiled", result);
@@ -217,7 +217,7 @@ $("form").submit(function (e) {
 });
 
 function init() {
-  $.get("/bootstrap-visualizer/style.scss", function (data) {
+  $.get("../style.scss", function (data) {
     console.log("Load was performed.");
     appScss = data;
     // compile().then(function (css) {
