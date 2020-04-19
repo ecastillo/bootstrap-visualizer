@@ -98,7 +98,7 @@ var files = [
 var tasks = [];
 
 files.forEach((file) => {
-  $.get("../scss/" + file, function (data) {
+  $.get("scss/" + file, function (data) {
     //var result = data;
     //console.log(data);
 
@@ -217,7 +217,7 @@ $("form").submit(function (e) {
 });
 
 function init() {
-  $.get("../style.scss", function (data) {
+  $.get("style.scss", function (data) {
     console.log("Load was performed.");
     appScss = data;
     // compile().then(function (css) {
