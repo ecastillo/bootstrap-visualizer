@@ -124,7 +124,7 @@ function compile(options = {}) {
           $headings-color: ${options2.headingsColor};`;
 
   var promise = new Promise(function (resolve, reject) {
-    sass.compile(string + '@import "scss/bootstrap";' + appScss, function (
+    sass.compile(string + '@import "/bootstrap-visualizer/scss/bootstrap";' + appScss, function (
       result
     ) {
       console.log("compiled", result);
