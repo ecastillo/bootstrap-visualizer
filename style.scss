@@ -3,7 +3,8 @@
 // @import "scss/variables";
 
 $grid-gutter-width: 30px !default;
-$theme-colors: map-merge($theme-colors, ("warning": #ffc107)) !default;
+$warning: #ffc107 !default;
+$theme-colors: map-merge($theme-colors, ("warning": $warning)) !default;
 $primary: #007bff !default;
 
 
@@ -33,7 +34,7 @@ $primary: #007bff !default;
       //background-color: lighten($primary, $i * 5%);
       //background-color: theme-color-level(primary, -$i);
       & > div {
-        background-color: theme-color-level(warning, -$i);
+        background-color: $warning; //theme-color-level(warning, -$i);
         height: 100%;
         display: flex;
         justify-content: center;
